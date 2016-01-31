@@ -25,52 +25,52 @@
       \vfill
       \onslide<4->
       \begin{tabular}{|p{0.9\textwidth}}
-        Sometimes I change my mind and show a completely different
-        figure on the right.
+        Use \texttt{minipage} for top aligned images, and
+        \texttt{parbox} for vertically centered images.
       \end{tabular}
-   
+      
       
       \endminipage      
     \end{column}
     %
     \begin{column}{.55\textwidth}
-      \minipage[c][0.8\textheight][s]{\columnwidth}
-      
-      % Don't use \vfill in the image column!
-      
-      \onslide<1->
 
+      % for top aligned images use minipage
       \only<1-3>{
-      \begin{figure}
-        \centering
-        \includegraphics<1>[width=\textwidth]{%
-          img/figure1.png} %
-        \includegraphics<2-3>[width=\textwidth]{%
-          img/figure1_red.png} %
-      \end{figure}}
-      
-      \only<3>{
-      \begin{figure}
-        \centering
-        \includegraphics[width=\textwidth]{%
-          img/figure2.png} %
-      \end{figure}
-      }
+        \minipage[c][0.8\textheight][s]{\columnwidth}
+        
+        \onslide<1->    
 
+        \only<1-3>{
+          \begin{figure}
+            \centering
+            \includegraphics<1>[width=\textwidth]{%
+              img/figure1.png} %
+            \includegraphics<2-3>[width=\textwidth]{%
+              img/figure1_red.png} %
+        \end{figure}}
+        
+        \only<3>{
+          \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{%
+              img/figure2.png} %
+        \end{figure}}
+        
+        \endminipage
+      }   
+
+      % for vertically centered images use parbox
       \only<4>{
-
-        \begin{figure}
-          \vspace{1.2cm} % Here I don't know how else to vertically
-                       % center the image
-          \centering
-          \includegraphics[height=0.5\textheight]{%
-            img/figure4.png} %
-        \end{figure}
-        \vfill
-      } 
-
+        \parbox[c][0.8\textheight][c]{\columnwidth}{
+          \begin{figure}
+            \centering
+            \includegraphics[height=0.5\textheight]{%
+              img/figure4.png} %
+          \end{figure}
+        }
+      }
       
-      \endminipage
     \end{column}
   \end{columns}
 
